@@ -34,47 +34,46 @@ xui.Class('App', 'xui.Module',{
             host.xui_ui_dialog6.append(
                 xui.create("xui.UI.List")
                 .setHost(host,"xui_ui_list4")
-                .setDirtyMark(false)
                 .setItems([
                     {
-                        "id":"bee",
-                        "caption":"<img src={/}img/bee.png width=64 height=64 style='vertical-align: middle;'/> Bee",
-                        "src":"{/}mp3/bee.mp3"
+                        "id" : "bee",
+                        "caption" : "<img src={/}img/bee.png width=64 height=64 style='vertical-align: middle;'/> Bee",
+                        "src" : "{/}mp3/bee.mp3"
                     },
                     {
-                        "id":"cat",
-                        "caption":"<img src={/}img/cat.png width=64 height=64  style='vertical-align: middle;'/> Cat",
-                        "src":"{/}mp3/cat.mp3"
+                        "id" : "cat",
+                        "caption" : "<img src={/}img/cat.png width=64 height=64  style='vertical-align: middle;'/> Cat",
+                        "src" : "{/}mp3/cat.mp3"
                     },
                     {
-                        "id":"chicken",
-                        "caption":"<img src={/}img/chicken.png width=64 height=64  style='vertical-align: middle;'/> Chicken",
-                        "src":"{/}mp3/chicken.mp3"
+                        "id" : "chicken",
+                        "caption" : "<img src={/}img/chicken.png width=64 height=64  style='vertical-align: middle;'/> Chicken",
+                        "src" : "{/}mp3/chicken.mp3"
                     },
                     {
-                        "id":"cow",
-                        "caption":"<img src={/}img/cow.png width=64 height=64  style='vertical-align: middle;'/> Cow",
-                        "src":"{/}mp3/cow.mp3"
+                        "id" : "cow",
+                        "caption" : "<img src={/}img/cow.png width=64 height=64  style='vertical-align: middle;'/> Cow",
+                        "src" : "{/}mp3/cow.mp3"
                     },
                     {
-                        "id":"dog",
-                        "caption":"<img src={/}img/dog.png width=64 height=64  style='vertical-align: middle;'/> Dog",
-                        "src":"{/}mp3/dog.mp3"
+                        "id" : "dog",
+                        "caption" : "<img src={/}img/dog.png width=64 height=64  style='vertical-align: middle;'/> Dog",
+                        "src" : "{/}mp3/dog.mp3"
                     },
                     {
-                        "id":"frog",
-                        "caption":"<img src={/}img/frog.png width=64 height=64  style='vertical-align: middle;'/> Frog",
-                        "src":"{/}mp3/frog.mp3"
+                        "id" : "frog",
+                        "caption" : "<img src={/}img/frog.png width=64 height=64  style='vertical-align: middle;'/> Frog",
+                        "src" : "{/}mp3/frog.mp3"
                     },
                     {
-                        "id":"pig",
-                        "caption":"<img src={/}img/pig.png width=64 height=64  style='vertical-align: middle;'/> Pig",
-                        "src":"{/}mp3/pig.mp3"
+                        "id" : "pig",
+                        "caption" : "<img src={/}img/pig.png width=64 height=64  style='vertical-align: middle;'/> Pig",
+                        "src" : "{/}mp3/pig.mp3"
                     },
                     {
-                        "id":"sheep",
-                        "caption":"<img src={/}img/sheep.png width=64 height=64  style='vertical-align: middle;'/> Sheep",
-                        "src":"{/}mp3/sheep.mp3"
+                        "id" : "sheep",
+                        "caption" : "<img src={/}img/sheep.png width=64 height=64  style='vertical-align: middle;'/> Sheep",
+                        "src" : "{/}mp3/sheep.mp3"
                     }
                 ])
                 .setDock("fill")
@@ -82,34 +81,34 @@ xui.Class('App', 'xui.Module',{
                 .setTop("3em")
                 .onItemSelected([
                     {
-                        "desc":"pause",
-                        "type":"control",
-                        "target":"xui_ui_audio1",
-                        "args":[ ],
-                        "method":"pause",
-                        "event":2
+                        "desc" : "pause",
+                        "type" : "control",
+                        "target" : "xui_ui_audio1",
+                        "args" : [ ],
+                        "method" : "pause",
+                        "event" : 2
                     },
                     {
-                        "desc":"set",
-                        "type":"control",
-                        "target":"xui_ui_audio1",
-                        "args":[
+                        "desc" : "set",
+                        "type" : "control",
+                        "target" : "xui_ui_audio1",
+                        "args" : [
                             "{page.xui_ui_audio1.setSrc()}",
                             undefined,
                             undefined,
                             "{args[1].src}",
                             "{true}"
                         ],
-                        "method":"setSrc",
-                        "redirection":"other:callback:call"
+                        "method" : "setSrc",
+                        "redirection" : "other:callback:call"
                     }
                 ])
                 .setCustomStyle({
-                    "CAPTION":{
-                        "font-size":"2em"
+                    "CAPTION" : {
+                        "font-size" : "2em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_dialog6.append(
                 xui.create("xui.UI.Audio")
@@ -118,10 +117,21 @@ xui.Class('App', 'xui.Module',{
                 .setDock("bottom")
                 .setLeft("1.0833333333333333em")
                 .setTop("24.833333333333332em")
-                .setWidth("17.333333333333332em")
+                .setWidth("17.447619047619046em")
                 .setHeight("2.6666666666666665em")
                 .setAutoplay(true)
-                );
+            );
+            
+            append(
+                xui.create("xui.UI.ComboInput")
+                .setHost(host,"xui_ui_comboinput5")
+                .setLeft("3.0476190476190474em")
+                .setTop("6.095238095238095em")
+                .setWidth("18em")
+                .setLabelSize("8em")
+                .setLabelCaption("Color Picker")
+                .setType("color")
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio
